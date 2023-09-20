@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -7,16 +8,18 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Whatsapp Clone',
       theme: ThemeData(
+        primaryColor: Colors.teal,
+
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      
+      home: const HomeScreen(),
     );
   }
 }
