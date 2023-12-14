@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/view/chat/chat_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -31,17 +34,44 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 Icons.search,
                 color: Colors.white,
               )),
-          IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.more_vert,
-                color: Colors.white,
-              )),
+          PopupMenuButton<String>(
+              iconColor: Colors.white,
+              color: Colors.white,
+              onSelected: (value) {
+                log(' $value');
+              },
+              itemBuilder: (context) {
+                return const [
+                  PopupMenuItem(
+                    value: "New group",
+                    child: Text("New group"),
+                  ),
+                  PopupMenuItem(
+                    value: "New broadcast",
+                    child: Text("New broadcast"),
+                  ),
+                  PopupMenuItem(
+                    value: "Whatsappweb ",
+                    child: Text("Whatsappweb"),
+                  ),
+                  PopupMenuItem(
+                    value: "Start message",
+                    child: Text("Start message"),
+                  ),
+                  PopupMenuItem(
+                    value: "Setting",
+                    child: Text(
+                      "Setting",
+                    ),
+                  ),
+                ];
+              })
         ],
         bottom: TabBar(
             labelColor: Colors.white,
             indicatorColor: Colors.white,
-            indicatorWeight: 1,
+            unselectedLabelColor: Colors.grey.shade400,
+            //indicatorWeight: 1,
             controller: _tabController,
             tabs: const [
               Tab(
@@ -62,7 +92,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
         controller: _tabController,
         children: const [
           Center(child: Text(' This Camera section is Under Construction')),
-          Center(child: Text(' This Chats section is Under Construction')),
+          ChatScreen(),
           Center(child: Text(' This Status section is Under Construction')),
           Center(child: Text(' This Calls section is Under Construction')),
         ],

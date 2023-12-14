@@ -14,8 +14,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Whatsapp Clone',
       theme: ThemeData(
+        fontFamily: "OpenSans",
         primaryColor: const Color(0XFF075f54),
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0XFF128C7E)),
+        colorScheme: ColorScheme.fromSeed(
+          // onSecondary: const Color(0XFF128C7E),
+          seedColor: const Color(0XFF075f54),
+        ),
         useMaterial3: true,
       ),
       home: const HomeScreen(),
