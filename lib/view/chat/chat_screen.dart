@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/models/chat_model.dart';
+import 'package:whatsapp_clone/view/select_contact/select_contacts.dart';
 import '.././chat/widgets/chat_list_card.dart';
 
 class ChatScreen extends StatefulWidget {
@@ -14,19 +15,19 @@ class _ChatScreenState extends State<ChatScreen> {
     ChatModel(
         name: "Techno Art",
         isGroup: true,
-        icon: "groups",
+        icon: "assets/icons/groups.svg",
         time: "4:49 PM",
         currentMessage: "Hey there."),
     ChatModel(
         name: "Tonmy",
         isGroup: false,
-        icon: "person",
+        icon: "assets/icons/person.svg",
         time: "5:49 PM",
         currentMessage: "Hi there."),
     ChatModel(
-        name: "Tonmy",
+        name: "Tanvir",
         isGroup: false,
-        icon: "person",
+        icon: "assets/icons/person.svg",
         time: "5:49 PM",
         currentMessage: "Hi there."),
   ];
@@ -39,9 +40,13 @@ class _ChatScreenState extends State<ChatScreen> {
             return ChatListCard(chatModel: chatList[index]);
           }),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.teal,
         shape: const CircleBorder(),
         elevation: 0,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const SelectContacts()));
+        },
         child: const Icon(
           Icons.chat,
           color: Colors.white,
