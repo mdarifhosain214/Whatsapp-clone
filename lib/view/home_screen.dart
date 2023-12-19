@@ -1,11 +1,9 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/view/chat/chat_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
-
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
