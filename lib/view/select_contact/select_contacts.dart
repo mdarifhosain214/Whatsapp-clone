@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/models/chat_model.dart';
+import 'package:whatsapp_clone/view/group/create_group.dart';
 import 'package:whatsapp_clone/view/select_contact/button_card.dart';
 import 'package:whatsapp_clone/view/select_contact/contact_card.dart';
 
@@ -83,7 +84,12 @@ class _SelectContactsState extends State<SelectContacts> {
         itemCount: contacts!.length + 2,
         itemBuilder: (context, index) {
           if (index == 0) {
-            return const ButtonCard(name: "New group", icon: Icons.group);
+            return InkWell(
+                onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (builder) => const CreateGroup())),
+                child: const ButtonCard(name: "New group", icon: Icons.group));
           } else if (index == 1) {
             return const ButtonCard(
               name: "New contacts",
