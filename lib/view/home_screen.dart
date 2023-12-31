@@ -1,5 +1,6 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/view/camera/camera_screen.dart';
 import 'package:whatsapp_clone/view/chat/chat_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -89,7 +90,7 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       body: TabBarView(
         controller: _tabController,
         children: const [
-          Center(child: Text(' This Camera section is Under Construction')),
+          CameraScreen(),
           ChatScreen(),
           Center(child: Text(' This Status section is Under Construction')),
           Center(child: Text(' This Calls section is Under Construction')),
